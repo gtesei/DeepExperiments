@@ -1,3 +1,7 @@
 *.FASL
 *.fasl
 *.lisp-temp
+*.gz
+*~
+*.*~
+_*
