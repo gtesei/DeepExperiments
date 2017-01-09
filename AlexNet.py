@@ -1,5 +1,3 @@
-# These are all the modules we'll be using later. Make sure you can import them
-# before proceeding further.
 from __future__ import print_function
 import numpy as np
 import tensorflow as tf
@@ -208,17 +206,18 @@ def doJob(valid_dataset,test_dataset,tf_train_dataset,tf_train_labels,dropout):
   return optimizer, loss, train_prediction, valid_prediction, test_prediction
 
 #########
-image_size = 28
-num_labels = 10
-num_channels = 1  # grayscale
-num_steps = 3000001
-batch_size = 128
-num_hidden = 4096
+if __name__ == '__main__':
+  image_size = 28
+  num_labels = 10
+  num_channels = 1  # grayscale
+  num_steps = 3000001
+  batch_size = 128
+  num_hidden = 4096
 
-train_dataset, train_labels, valid_dataset, valid_labels, test_dataset, test_labels = load_data()
+  train_dataset, train_labels, valid_dataset, valid_labels, test_dataset, test_labels = load_data()
 
-graph = tf.Graph()
-with tf.Session(graph=graph) as session:
+  graph = tf.Graph()
+  with tf.Session(graph=graph) as session:
 
     # Input data.
     tf_train_dataset = tf.placeholder(tf.float32, shape=(batch_size, image_size, image_size, num_channels))
