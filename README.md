@@ -12,10 +12,10 @@ __TensorFlow experiments on computer vision and natural language processing__
 2. [Tensorflow basics](https://github.com/gtesei/DeepExperiments/blob/master/TensorFlow_WarmUp_0.12.0-rc1.ipynb)
 3. [MNIST For ML Beginners (0.11.0rc2)](https://github.com/gtesei/DeepExperiments/blob/master/MNIST_for_beginners_noNN_noCONV_0.11.0rc2.ipynb) 
 4. [MNIST For ML Beginners (0.12.0rc2)](https://github.com/gtesei/DeepExperiments/blob/master/MNIST_for_beginners_noNN_noCONV_0.12.0-rc1.ipynb)
-5. [Fully Connected Naural Networks - No Convolutions](https://github.com/gtesei/DeepExperiments/blob/master/notMNIST_NN_noCONV_0.12.0-rc1.ipynb)
-6. [Fully Connected Naural Networks - Regularization/L2 - No Convolutions](https://github.com/gtesei/DeepExperiments/blob/master/notMNIST_NN_Regularization_L2_noCONV_0.12.0-rc1.ipynb)
-7. [Fully Connected Naural Networks - Regularization/Dropout - No Convolutions](https://github.com/gtesei/DeepExperiments/blob/master/notMNIST_NN_Regularization_Dropout_noCONV_0.12.0-rc1.ipynb)
-8. [Fully Connected Naural Networks + Convolutions](https://github.com/gtesei/DeepExperiments/blob/master/notMNIST_NN_CONV_0.12.0-rc1.ipynb)
+5. [Fully Connected Neural Networks - No Convolutions](https://github.com/gtesei/DeepExperiments/blob/master/notMNIST_NN_noCONV_0.12.0-rc1.ipynb)
+6. [Fully Connected Neural Networks - Regularization/L2 - No Convolutions](https://github.com/gtesei/DeepExperiments/blob/master/notMNIST_NN_Regularization_L2_noCONV_0.12.0-rc1.ipynb)
+7. [Fully Connected Neural Networks - Regularization/Dropout - No Convolutions](https://github.com/gtesei/DeepExperiments/blob/master/notMNIST_NN_Regularization_Dropout_noCONV_0.12.0-rc1.ipynb)
+8. [Fully Connected Neural Networks + Convolutions](https://github.com/gtesei/DeepExperiments/blob/master/notMNIST_NN_CONV_0.12.0-rc1.ipynb)
 9. [AlexNet](https://github.com/gtesei/DeepExperiments/blob/master/AlexNet.py) from [ImageNet Classification with Deep Convolutional Neural Networks](https://papers.nips.cc/paper/4824-imagenet-classification-with-deep-convolutional-neural-networks.pdf)
 
 ### Natural Language Processing 
