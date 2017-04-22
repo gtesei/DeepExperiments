@@ -17,6 +17,7 @@ __TensorFlow experiments on computer vision and natural language processing__
 7. [Fully Connected Neural Networks - Regularization/Dropout - No Convolutions](https://github.com/gtesei/DeepExperiments/blob/master/notMNIST_NN_Regularization_Dropout_noCONV_0.12.0-rc1.ipynb)
 8. [Fully Connected Neural Networks + Convolutions](https://github.com/gtesei/DeepExperiments/blob/master/notMNIST_NN_CONV_0.12.0-rc1.ipynb)
 9. [AlexNet](https://github.com/gtesei/DeepExperiments/blob/master/AlexNet.py) from [ImageNet Classification with Deep Convolutional Neural Networks](https://papers.nips.cc/paper/4824-imagenet-classification-with-deep-convolutional-neural-networks.pdf)
+10. [Autoencoders](https://github.com/gtesei/DeepExperiments/blob/master/Autoencoders_1.1.0.ipynb) 
 
 ### Natural Language Processing 
 
