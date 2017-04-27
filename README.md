@@ -22,3 +22,4 @@ __TensorFlow experiments on computer vision and natural language processing__
 ### Natural Language Processing 
 
 1. [Word2Vec](https://github.com/gtesei/DeepExperiments/blob/master/Word2Vec_0.12.0-rc1.ipynb)
+2. [Recurrent Neural Networks](https://github.com/gtesei/DeepExperiments/blob/master/Recurrent_Neural_Networks_1.1.0.ipynb)
