@@ -18,6 +18,7 @@ __TensorFlow/Keras experiments on computer vision and natural language processin
 8. [Fully Connected Neural Networks + Convolutions](https://github.com/gtesei/DeepExperiments/blob/master/notMNIST_NN_CONV_0.12.0-rc1.ipynb)
 9. [AlexNet](https://github.com/gtesei/DeepExperiments/blob/master/AlexNet.py) from [ImageNet Classification with Deep Convolutional Neural Networks](https://papers.nips.cc/paper/4824-imagenet-classification-with-deep-convolutional-neural-networks.pdf)
 10. [Autoencoders](https://github.com/gtesei/DeepExperiments/blob/master/Autoencoders_1.1.0.ipynb) 
+11. [Generative Adversarial Networks](https://github.com/gtesei/DeepExperiments/blob/master/Generative_Adversarial_Networks.ipynb) 
 
 ### Natural Language Processing 
 
