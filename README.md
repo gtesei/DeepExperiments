@@ -17,7 +17,7 @@ __TensorFlow/Keras experiments on computer vision and natural language processin
 7. [Fully Connected Neural Networks - Regularization/Dropout - No Convolutions](https://github.com/gtesei/DeepExperiments/blob/master/notMNIST_NN_Regularization_Dropout_noCONV_0.12.0-rc1.ipynb)
 8. [Fully Connected Neural Networks + Convolutions](https://github.com/gtesei/DeepExperiments/blob/master/notMNIST_NN_CONV_0.12.0-rc1.ipynb)
 9. [AlexNet](https://github.com/gtesei/DeepExperiments/blob/master/AlexNet.py) from [ImageNet Classification with Deep Convolutional Neural Networks](https://papers.nips.cc/paper/4824-imagenet-classification-with-deep-convolutional-neural-networks.pdf)
-9. [From Deep Learning with Python ](https://github.com/gtesei/DeepExperiments/blob/master/DeepLearning_With_Python) from [ImageNet Classification with Deep Convolutional Neural Networks](https://papers.nips.cc/paper/4824-imagenet-classification-with-deep-convolutional-neural-networks.pdf)
+9. [From Deep Learning with Python ](https://github.com/gtesei/DeepExperiments/blob/master/DeepLearning_With_Python) 
 10. [Autoencoders](https://github.com/gtesei/DeepExperiments/blob/master/Autoencoders_1.1.0.ipynb) 
 11. [Generative Adversarial Networks](https://github.com/gtesei/DeepExperiments/blob/master/Generative_Adversarial_Networks.ipynb) 
 
