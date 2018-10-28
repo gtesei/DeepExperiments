@@ -120,8 +120,7 @@ def main():
     model = IrisNet(4, 100, 50, 3) 
     if use_cuda:
         model = model.cuda()
-    model, train_loss, test_loss, train_accuracy, 
-    test_accuracy = train_model(epochs=500,train_loader=train_loader,
+    model, train_loss, test_loss, train_accuracy, test_accuracy = train_model(epochs=500,train_loader=train_loader,
                                 train_ds=train_ds,test_ds=test_ds,
                                 model=model,
                                 criterion=nn.CrossEntropyLoss(),
