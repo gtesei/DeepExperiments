@@ -45,7 +45,7 @@ def train_model(epochs,x_train,y_train,model,criteria,
         loss.backward() # calculate the loss with the help of back-propagation 
         optimizer.step() # ask the optimizer to adjust parameters based on the gradients 
         if epoch % print_every_n_lines == 0:
-            print(epoch,"TRAIN - MSE loss:",float(loss))
+            print(epoch,"TRAIN - loss:",float(loss))
     
     model.eval() # put the model into evaluation mode 
     
@@ -117,17 +117,17 @@ if __name__ == '__main__':
 #torch.__version__: 0.4.1
 #GPU Not Supported 0
 #**** Linear Regression ***
-#0 TRAIN - MSE loss: 167.20428466796875
-#100 TRAIN - MSE loss: 0.0006236424669623375
-#200 TRAIN - MSE loss: 0.0006231211009435356
-#300 TRAIN - MSE loss: 0.0006231175502762198
-#400 TRAIN - MSE loss: 0.0006231175502762198
-#500 TRAIN - MSE loss: 0.0006231175502762198
-#600 TRAIN - MSE loss: 0.0006231175502762198
-#700 TRAIN - MSE loss: 0.0006231175502762198
-#800 TRAIN - MSE loss: 0.0006231175502762198
-#Test Prediction (ground truth: 20): 19.942033767700195
-#Test Prediction (ground truth: 40): 39.8652229309082
+#0 TRAIN - loss: 99.78645324707031
+#100 TRAIN - loss: 0.000623710046056658
+#200 TRAIN - loss: 0.0006231185980141163
+#300 TRAIN - loss: 0.0006231052684597671
+#400 TRAIN - loss: 0.0006231052684597671
+#500 TRAIN - loss: 0.0006231052684597671
+#600 TRAIN - loss: 0.0006231052684597671
+#700 TRAIN - loss: 0.0006231052684597671
+#800 TRAIN - loss: 0.0006231052684597671
+#Test Prediction (ground truth: 20): 19.942031860351562
+#Test Prediction (ground truth: 40): 39.86521911621094
 #>>>> Checking with Normal Equation .... 
 #Test Prediction Normal Equation (ground truth: 20): 19.942031860351562
 #Test Prediction Normal Equation (ground truth: 40): 39.86521911621094
@@ -137,18 +137,18 @@ if __name__ == '__main__':
 #tensor([[0.0188],
 #        [1.9923]])
 #**** Logistic Regression ***
-#0 TRAIN - MSE loss: 10.252114295959473
-#100 TRAIN - MSE loss: 1.556445598602295
-#200 TRAIN - MSE loss: 0.3316282033920288
-#300 TRAIN - MSE loss: 0.3184657096862793
-#400 TRAIN - MSE loss: 0.24279125034809113
-#500 TRAIN - MSE loss: 0.22096815705299377
-#600 TRAIN - MSE loss: 0.2036302089691162
-#700 TRAIN - MSE loss: 0.18943476676940918
-#800 TRAIN - MSE loss: 0.1775386482477188
-#900 TRAIN - MSE loss: 0.16738063097000122
-#Test Prediction (ground truth: 0): 0.013451957143843174
-#Test Prediction (ground truth: 1): 0.9274367690086365
-#Test Tensor Data: tensor([[0.0135],
-#        [0.9274]])
-#Test Tensor Grad: <SigmoidBackward object at 0x118238b70>
+#0 TRAIN - loss: 4.307015419006348
+#100 TRAIN - loss: 1.447026252746582
+#200 TRAIN - loss: 1.4648678302764893
+#300 TRAIN - loss: 0.4446541965007782
+#400 TRAIN - loss: 0.2897562086582184
+#500 TRAIN - loss: 0.23708854615688324
+#600 TRAIN - loss: 0.21650147438049316
+#700 TRAIN - loss: 0.20000821352005005
+#800 TRAIN - loss: 0.1864228993654251
+#900 TRAIN - loss: 0.17498305439949036
+#Test Prediction (ground truth: 0): 0.015621320344507694
+#Test Prediction (ground truth: 1): 0.9227421283721924
+#Test Tensor Data: tensor([[0.0156],
+#        [0.9227]])
+#Test Tensor Grad: <SigmoidBackward object at 0x118266240>
