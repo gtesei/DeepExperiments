@@ -183,3 +183,31 @@ def main():
 if __name__ == '__main__':
     main()
 
+#torch.__version__: 0.4.1
+#GPU Supported 1
+#**** Simple CNN-based Neural Network Architecture for MNIST ***
+#>> Downloading and transforming dataset ... 
+#>> TRAIN: 60000   - VALID: 10000
+#MNISTNet(
+#  (conv1): Conv2d(1, 20, kernel_size=(5, 5), stride=(1, 1))
+#  (relu1): ReLU()
+#  (conv2): Conv2d(20, 30, kernel_size=(5, 5), stride=(1, 1))
+#  (conv2_drop): Dropout2d(p=0.5)
+#  (maxpool2): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+#  (relu2): ReLU()
+#  (fc1): Linear(in_features=3000, out_features=500, bias=True)
+#  (fc2): Linear(in_features=500, out_features=10, bias=True)
+#)
+#Epoch 1/100, Tr Loss: 1.0738, Tr Acc: 66.0000, Val Loss: 0.3277, Val Acc: 90.0000
+#Epoch 11/100, Tr Loss: 0.0934, Tr Acc: 97.0000, Val Loss: 0.0643, Val Acc: 97.0000
+#Epoch 21/100, Tr Loss: 0.0593, Tr Acc: 98.0000, Val Loss: 0.0416, Val Acc: 98.0000
+#Epoch 31/100, Tr Loss: 0.0447, Tr Acc: 98.0000, Val Loss: 0.0414, Val Acc: 98.0000
+#Epoch 41/100, Tr Loss: 0.0359, Tr Acc: 98.0000, Val Loss: 0.0332, Val Acc: 98.0000
+#Epoch 51/100, Tr Loss: 0.0327, Tr Acc: 98.0000, Val Loss: 0.0340, Val Acc: 98.0000
+#Epoch 61/100, Tr Loss: 0.0266, Tr Acc: 99.0000, Val Loss: 0.0294, Val Acc: 98.0000
+#Epoch 71/100, Tr Loss: 0.0238, Tr Acc: 99.0000, Val Loss: 0.0288, Val Acc: 99.0000
+#Epoch 81/100, Tr Loss: 0.0195, Tr Acc: 99.0000, Val Loss: 0.0324, Val Acc: 99.0000
+#Epoch 91/100, Tr Loss: 0.0173, Tr Acc: 99.0000, Val Loss: 0.0321, Val Acc: 99.0000
+#Epoch 100/100, Tr Loss: 0.0165, Tr Acc: 99.0000, Val Loss: 0.0304, Val Acc: 99.0000
+#Time (s): 727.47 seconds
+
