@@ -183,6 +183,7 @@ def main():
 if __name__ == '__main__':
     main()
 
+# =============================================================================
 #torch.__version__: 0.4.1
 #GPU Supported 1
 #**** Simple CNN-based Neural Network Architecture for MNIST ***
@@ -210,4 +211,4 @@ if __name__ == '__main__':
 #Epoch 91/100, Tr Loss: 0.0173, Tr Acc: 99.0000, Val Loss: 0.0321, Val Acc: 99.0000
 #Epoch 100/100, Tr Loss: 0.0165, Tr Acc: 99.0000, Val Loss: 0.0304, Val Acc: 99.0000
 #Time (s): 727.47 seconds
-
+# =============================================================================
