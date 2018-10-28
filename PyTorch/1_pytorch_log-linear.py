@@ -114,6 +114,7 @@ def main():
 if __name__ == '__main__':
     main()
     
+# =============================================================================
 #torch.__version__: 0.4.1
 #GPU Not Supported 0
 #**** Linear Regression ***
@@ -152,3 +153,4 @@ if __name__ == '__main__':
 #Test Tensor Data: tensor([[0.0156],
 #        [0.9227]])
 #Test Tensor Grad: <SigmoidBackward object at 0x118266240>
+# =============================================================================
