@@ -15,6 +15,8 @@ from torch.autograd import Variable
 from torchvision import datasets
 from torchvision import transforms
 
+import time
+
 # Functional module contains helper functions
 import torch.nn.functional as F
 
@@ -66,33 +68,28 @@ class MNISTNet(nn.Module):
         return x
     
     
-def train_model(epochs,train_loader,train_ds,test_ds,model,criterion,batch_size,
+def train_model(epochs,train_loader,valid_loader,model,criterion,batch_size,
                 learning_rate=0.01,print_every_n_lines=10):
 
     optimizer = torch.optim.SGD(model.parameters(),learning_rate,
                                 nesterov=True,momentum=0.9,dampening=0)    
     train_loss = []
-    test_loss = []
+    valid_loss = []
     train_accuracy = []
-    test_accuracy = []
+    valid_accuracy = []
     
     for epoch in range(epochs):
         ############################
         # Train
         ############################
-        
         iter_loss = 0.0
         correct = 0
         iterations = 0
-        
         model.train()                   # Put the network into training mode
-        
         for i, (items, classes) in enumerate(train_loader):
-            
             # Convert torch tensor to Variable
             items = Variable(items)
             classes = Variable(classes)
-            
             # If we have GPU, shift the data to GPU
             if cuda.is_available():
                 items = items.cuda()
@@ -104,58 +101,45 @@ def train_model(epochs,train_loader,train_ds,test_ds,model,criterion,batch_size,
             iter_loss += loss.data[0] # Accumulate the loss
             loss.backward()           # Calculate the gradients with help of back propagation
             optimizer.step()          # Ask the optimizer to adjust the parameters based on the gradients
-            
             # Record the correct predictions for training data 
             _, predicted = torch.max(outputs.data, 1)
             correct += (predicted == classes.data).sum()
             iterations += 1
-        
         # Record the training loss
         train_loss.append(iter_loss/iterations)
         # Record the training accuracy
         train_accuracy.append((100 * correct / len(train_loader.dataset)))
-       
         ############################
         # Validate - How did we do on the unseen dataset?
         ############################
-        
         loss = 0.0
         correct = 0
         iterations = 0
-    
         model.eval()                    # Put the network into evaluate mode
-        
-        for i, (items, classes) in enumerate(mnist_valid_loader):
-            
+        for i, (items, classes) in enumerate(valid_loader):
             # Convert torch tensor to Variable
             items = Variable(items)
             classes = Variable(classes)
-            
             # If we have GPU, shift the data to GPU
             if cuda.is_available():
                 items = items.cuda()
                 classes = classes.cuda()
-            
             outputs = model(items)      # Do the forward pass
             loss += criterion(outputs, classes).data[0] # Calculate the loss
-            
             # Record the correct predictions for training data
             _, predicted = torch.max(outputs.data, 1)
             correct += (predicted == classes.data).sum()
-            
             iterations += 1
-    
         # Record the validation loss
         valid_loss.append(loss/iterations)
         # Record the validation accuracy
-        valid_accuracy.append(correct / len(mnist_valid_loader.dataset) * 100.0)
-    
+        valid_accuracy.append((100 * correct / len(valid_loader.dataset)))
         if epoch % print_every_n_lines == 0 or epoch == (epochs-1):
             print ('Epoch %d/%d, Tr Loss: %.4f, Tr Acc: %.4f, Val Loss: %.4f, Val Acc: %.4f'
-               %(epoch+1, num_epochs, train_loss[-1], train_accuracy[-1], 
+               %(epoch+1, epochs, train_loss[-1], train_accuracy[-1], 
                  valid_loss[-1], valid_accuracy[-1]))
         
-        return model, train_loss, test_loss, train_accuracy, test_accuracy
+    return model, train_loss, valid_loss, train_accuracy, valid_accuracy
     
     
 """
@@ -170,10 +154,10 @@ def main():
         print("GPU Not Supported",torch.cuda.device_count())
     print("**** Simple CNN-based Neural Network Architecture for MNIST ***")
     print(">> Downloading and transforming dataset ... ")
+    # Dataset 
     # Mean and standard deviation of all the pixels in the MNIST dataset
     mean_gray = 0.1307
     stddev_gray = 0.3081
-    
     transform=transforms.Compose([transforms.ToTensor(),
                                   transforms.Normalize((mean_gray,), (stddev_gray,))])
     mnist_train = datasets.MNIST('./data', train=True, download=True, transform=transform)
@@ -181,19 +165,18 @@ def main():
     batch_size = 1024 # Reduce this if you get out-of-memory error
     train_loader = torch.utils.data.DataLoader(mnist_train, batch_size=batch_size, shuffle=True, num_workers=1)
     valid_loader = torch.utils.data.DataLoader(mnist_valid, batch_size=batch_size, shuffle=True, num_workers=1)
+    print(">> TRAIN:",len(train_loader.dataset),"  - VALID:",len(valid_loader.dataset))
     ## TRAIN
     model = MNISTNet()
     if cuda.is_available():
         model = model.cuda()
-    model, train_loss, test_loss, train_accuracy, 
-    test_accuracy = train_model(epochs=500,train_loader=train_loader,
-                                train_ds=train_ds,test_ds=test_ds,
-                                model=model,
-                                criterion=nn.CrossEntropyLoss(),
-                                batch_size=batch_size,
-                                learning_rate=0.01,print_every_n_lines=100)
-
-
+    print(model)
+    model, train_loss, test_loss, train_accuracy, test_accuracy = train_model(epochs=100,train_loader=train_loader,
+                                                                              valid_loader=valid_loader,model=model,
+                                                                              criterion=nn.CrossEntropyLoss(),
+                                                                              batch_size=batch_size,
+                                                                              learning_rate=0.01,print_every_n_lines=10)
+    torch.save(model.state_dict(), "./3.model.pth")
     # time 
     print('Time (s): %.2f seconds'%(time.time() - start))
     
